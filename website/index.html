@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SpamGuard | AI Spam Detection</title>
+    <link rel="stylesheet" href="./public/css/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="hero">
+        <nav class="topbar">
+          <div class="brand">SpamGuard</div>
+          <a class="toplink" href="#demo">Live Demo</a>
+        </nav>
+
+        <section class="hero-content">
+          <div class="hero-copy">
+            <p class="eyebrow">AI Powered Spam Detection System</p>
+            <h1>Catch suspicious messages before users trust them.</h1>
+            <p class="hero-text">
+              SpamGuard combines NLP preprocessing, TF-IDF signal extraction, and a PyTorch classifier
+              behind a lightweight API for fast spam detection.
+            </p>
+            <div class="hero-actions">
+              <a class="button primary" href="#demo">Try the Demo</a>
+              <a class="button secondary" href="http://127.0.0.1:8000/docs" target="_blank" rel="noreferrer">API Docs</a>
+            </div>
+          </div>
+          <div class="hero-card">
+            <div class="metric">
+              <span>Pipeline</span>
+              <strong>TF-IDF + PyTorch</strong>
+            </div>
+            <div class="metric">
+              <span>Backend</span>
+              <strong>FastAPI</strong>
+            </div>
+            <div class="metric">
+              <span>Use Case</span>
+              <strong>SMS & Short Text</strong>
+            </div>
+          </div>
+        </section>
+      </header>
+
+      <main>
+        <section class="feature-grid">
+          <article class="feature">
+            <h2>Fast Inference</h2>
+            <p>Low-latency predictions through a compact REST API designed for real-time checks.</p>
+          </article>
+          <article class="feature">
+            <h2>Explainable Signals</h2>
+            <p>Classic NLP features make the model behavior easier to inspect and retrain.</p>
+          </article>
+          <article class="feature">
+            <h2>Production-Ready Structure</h2>
+            <p>Separate modules for training, inference, API delivery, and frontend integration.</p>
+          </article>
+        </section>
+
+        <section class="demo-section" id="demo">
+          <div class="demo-copy">
+            <p class="eyebrow">Live Prediction</p>
+            <h2>Paste a message and let SpamGuard classify it.</h2>
+            <p>The frontend sends your message to the local FastAPI backend at `http://127.0.0.1:8000/predict`.</p>
+          </div>
+
+          <div class="demo-panel">
+            <label for="message">Message</label>
+            <textarea id="message" rows="7" placeholder="Example: Congratulations! You have won a free gift voucher."></textarea>
+            <button id="analyzeBtn" class="button primary full">Analyze Message</button>
+            <div id="status" class="status">Model response will appear here.</div>
+            <div id="result" class="result hidden">
+              <p><span>Prediction</span><strong id="labelValue">-</strong></p>
+              <p><span>Spam Probability</span><strong id="spamValue">-</strong></p>
+              <p><span>Ham Probability</span><strong id="hamValue">-</strong></p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./public/js/app.js"></script>
+  </body>
+</html>
+
